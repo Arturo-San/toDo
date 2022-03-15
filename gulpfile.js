@@ -14,16 +14,16 @@ const browsersync = require('browser-sync').create();
 //     .pipe(gulp.dest("dist"));
 // });
 
-function scssTask(file){
-	console.log(file)
+function scssTask(){
+  console.log('SASS');
 	var plugins = [
 			autoprefixer({browsers: ['last 1 version']}),
       cssnano()
     ];
-  return src(file, { sourcemaps: true })
+  return src('./src/scss/main.scss')
     .pipe(sass())
     .pipe(postcss(plugins))
-    .pipe(dest(file.replace('scss/main.scss','dist'), { sourcemaps: '.' }));
+    .pipe(dest('site/css/'));
 }
 
 function browsersyncServe(cb){
@@ -41,12 +41,14 @@ function browsersyncReload(cb){
 }
 
 function watchTask(){
-  watch('dist/*.html', browsersyncReload);
-  //watch(['app/scss/**/*.scss', 'app/js/**/*.js'], series(scssTask, jsTask, browsersyncReload));
-  watch('scss/**/*.scss').on('change', function (path) {
-  	scssTask(path);
-    browsersync.reload();
-  });
+  watch('site/*.html', browsersyncReload);
+  //watch(['src/scss/**/*.scss', 'app/js/**/*.js'], series(scssTask, jsTask, browsersyncReload));
+  watch(['src/scss/**/*.scss'], series(scssTask, browsersyncReload));
+  // watch('scss/**/*.scss').on('change', function (path) {
+  // 	scssTask(path);
+  //   browsersync.reload();
+  // });
+  //gulp.watch('./src/sass/**/*.scss', ['scssTask']);
 }
 
 

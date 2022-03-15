@@ -29,7 +29,7 @@ function scssTask(file){
 function browsersyncServe(cb){
   browsersync.init({
     server: {
-      baseDir: './dist/'
+      baseDir: './site/'
     }
   });
   cb();

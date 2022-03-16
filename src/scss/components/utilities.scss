@@ -1,0 +1,11 @@
+.main-container{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+}
+.section-container{
+    background-image: linear-gradient(to bottom, #0169db, #003e82 99%);
+    background-size: cover;
+    position: relative;
+}

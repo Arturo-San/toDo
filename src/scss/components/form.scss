@@ -1,0 +1,16 @@
+.input-container{
+    display: flex;
+    justify-content: center;
+}
+.main-input{
+    border:none;
+    border-radius: 8px;
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.36);
+    color: rgb(173, 173, 173);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    margin: auto;
+    padding: 15px;
+    width: 80%;
+    position: absolute;
+}
